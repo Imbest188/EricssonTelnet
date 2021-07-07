@@ -63,7 +63,7 @@ class EricssonParser:
         mo = ''
         startOfData = False
         for line in lines:
-            if len(line) and '<' not in line and ':' not in line and startOfData:
+            if len(line) > 1 and '<' not in line and ':' not in line and startOfData:
                 if valueLine:
                     key = self.checkIdentity(headers)
                     if key and line[key.start(): key.end()].isspace() == False:
