@@ -16,8 +16,11 @@ class EricssonBscCommands:
         return "RLSTC:CELL=" + cell + ",STATE=" + state + ";";
 
     @staticmethod
-    def rxtcp(cell='ALL'):
-        return "RXTCP:MOTY=RXOTG,CELL=" + cell + ";"
+    def rxtcp(cell=''):
+        cellArg = ''
+        if len(cell):
+            cellArg = ",CELL=" + cell
+        return "RXTCP:MOTY=RXOTG" + cellArg + ";"
 
     @staticmethod
     def rxmsp(moty='RXOTG', mo='', tg='', trx=''):

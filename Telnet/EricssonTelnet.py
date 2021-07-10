@@ -39,6 +39,8 @@ class EricssonTelnet:
 
     def __parse(self, alarmText):
         for alarm in alarmText.split('END'):
+            if len(self.__alarms) > 1000:
+                self.__alarms.pop(0)
             self.__alarms.append(alarm.strip())
 
     def __cleanOutSpecialSymbols(self, text):
