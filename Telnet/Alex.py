@@ -9,11 +9,26 @@ class EricssonBscCommands:
 
     @staticmethod
     def rlstp(cell='ALL', state='HALTED'):
-        return "RLSTP:CELL=" + cell + ",STATE=" + state + ";";
+        return "RLSTP:CELL=" + cell + ",STATE=" + state + ";"
 
     @staticmethod
     def rlstc(cell, state='HALTED'):
-        return "RLSTC:CELL=" + cell + ",STATE=" + state + ";";
+        return "RLSTC:CELL=" + cell + ",STATE=" + state + ";"
+
+    @staticmethod
+    def rldep(cell):
+        return "RLDEP:CELL=" + cell + ";"
+
+    @staticmethod
+    def rlnrp(cell, utran=False):
+        utranString = ''
+        if utran:
+            utranString = ',EXT,UTRAN'
+        return "RLNRP:CELL=" + cell + ",CELLR=ALL" + utran + ';'
+
+    @staticmethod
+    def rlstc(cell, state='HALTED'):
+        return "RLSTC:CELL=" + cell + ",STATE=" + state + ";"
 
     @staticmethod
     def rxtcp(cell=''):
