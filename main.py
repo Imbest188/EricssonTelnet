@@ -4,8 +4,8 @@ import time
 
 if __name__ == '__main__':
     pool = Pool()
-    pool.addController('10.140.3.7', 'ts_user', 'apg43l2@', 'BSC04')
-    pool.addController('10.140.27.68', 'ts_user', 'apg43l1@', 'BSC05')
+    pool.addController('**.***.*.*', '*******', '*******', 'BSC04')
+    pool.addController('**.**.**.**', '*******', '*******', 'BSC05')
 
     # Можно складывать аварии ( полезно :) )
     #summary = pool.getAlarms() + pool.getHaltedCells()
